@@ -1,0 +1,19 @@
+rootProject.name = 'wwgs'
+
+//include ':@react-native-community_async-storage'
+//project(':@react-native-community_async-storage').projectDir = new File(rootProject.projectDir, '../node_modules/@react-native-community/async-storage/android')
+
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':app'
+
+include ':app', ':react-native-code-push'
+project(':react-native-code-push').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-code-push/android/app')
+
+include ':aliface'
+project(':aliface').projectDir = new File(rootProject.projectDir, '../modules/aliface')
+
+include ':alipay'
+project(':alipay').projectDir = new File(rootProject.projectDir, '../modules/alipay')
+
+include ':feima'
+project(':feima').projectDir = new File(rootProject.projectDir, '../modules/feima')
